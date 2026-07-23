@@ -1,204 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 para suportar caracteres especiais -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a viewport para garantir a responsividade em dispositivos móveis -->
-    <title>Portfólio | Karlos Eduardo</title> <!-- Título da página exibido na aba do navegador -->
-    <link rel="stylesheet" href="assets/styles/style.css"> <!-- Link para o arquivo de estilo CSS para estilização da página -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> <!-- Link para a biblioteca de ícones Font Awesome -->
-    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" type="image/x-icon"> <!-- Favicon que aparece na aba do navegador -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Portfólio de Karlos Eduardo — Data Analytics, Python, SQL e automação de processos.">
+  <meta name="theme-color" content="#08111f">
+  <title>Karlos Eduardo | Data Analytics & Python</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+  <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 <body>
-    
-    <header class="header">
-        <!-- Logotipo que redireciona para o topo da página -->
-        <a href="#" class="logo"><span>Karlos Eduardo</span></a>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
 
-        <!-- Menu de navegação com links internos para diferentes seções da página -->
-        <ul class="nav-links">
-            <li>
-                <a href="#sobre">Sobre</a> <!-- Link para a seção "Sobre" -->
-            </li>
-            <li>
-                <a href="#experiencia">Experiência</a> <!-- Link para a seção "Experiência" -->
-            </li>
-            <li>
-                <a href="#projetos">Projetos</a> <!-- Link para a seção "Projetos" -->
-            </li>
-            <li>
-                <a href="#contato">Contato</a> <!-- Link para a seção "Contato" -->
-            </li>
-         </ul>
+  <header>
+    <nav class="container nav">
+      <a class="brand" href="#inicio" aria-label="Início">
+        <span class="brand-mark">KE</span><span>Karlos Eduardo</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      <div class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#competencias">Competências</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#experiencia">Experiência</a>
+      </div>
+      <a class="button button-small button-outline nav-cta" href="#contato">Vamos conversar</a>
+    </nav>
+  </header>
 
-        <!-- Ícone de menu para dispositivos móveis (inicialmente oculto) -->
-        <i class="fa-duotone fa-solid fa-bars" id="icone-menu"></i>
+  <main>
+    <section class="hero container" id="inicio">
+      <div class="hero-copy reveal">
+        <div class="available"><span></span> Disponível para oportunidades</div>
+        <p class="eyebrow">Data Analytics · Python · Automação</p>
+        <h1>Transformo dados e processos em <span>soluções que funcionam.</span></h1>
+        <p class="hero-text">
+          Sou Karlos Eduardo, estudante de Análise e Desenvolvimento de Sistemas.
+          Construo análises com Python e SQL, dashboards para decisão e automações
+          que eliminam tarefas repetitivas.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projetos">Ver projetos <i class="fa-solid fa-arrow-down"></i></a>
+          <a class="button button-ghost" href="assets/dowloands/Curriculo de Karlos.pdf" download>Baixar currículo</a>
+        </div>
+        <div class="social-row">
+          <a href="https://github.com/karlosqwer" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/karlos-eduardo-414016253/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="mailto:contatokarlos12@gmail.com"><i class="fa-solid fa-envelope"></i> E-mail</a>
+        </div>
+      </div>
 
-        <!-- Botão que redireciona o usuário ao GitHub -->
-        <button class="botao-visita" onclick="window.open('https://github.com/karlosqwer', '_blank')">Visite meu GitHub</button>
+      <div class="hero-visual reveal">
+        <div class="profile-frame">
+          <div class="profile-glow"></div>
+          <img src="assets/images/fotos/imagem-perfil.png" alt="Karlos Eduardo">
+          <div class="floating-card card-python"><i class="fa-brands fa-python"></i><span>Python<br><small>Dados & automação</small></span></div>
+          <div class="floating-card card-sql"><i class="fa-solid fa-database"></i><span>SQL<br><small>Análise de negócio</small></span></div>
+        </div>
+      </div>
+    </section>
 
-    </header>
+    <section class="proof">
+      <div class="container proof-grid">
+        <div><strong>500+</strong><span>registros de pessoas analisados</span></div>
+        <div><strong>107 mil</strong><span>registros processados em um case</span></div>
+        <div><strong>2</strong><span>projetos completos de analytics</span></div>
+        <div><strong>100%</strong><span>dados sintéticos e reproduzíveis</span></div>
+      </div>
+    </section>
 
-    <section id="sobre" class="sobre">
-        <div class="sobre-container">
-            <img src="assets/images/fotos/imagem-perfil.png" alt="Imagem de perfil"> <!-- Imagem de perfil do usuário -->
+    <section class="section container" id="sobre">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Sobre mim</p>
+        <h2>Perfil técnico com visão de negócio</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p>
+            Minha experiência com suporte de software me ensinou a ouvir usuários,
+            investigar problemas e explicar soluções com clareza. Hoje aplico essa
+            base na análise de dados e no desenvolvimento de automações.
+          </p>
+          <p>
+            Busco uma oportunidade de entrada em <strong>Dados, Python ou RPA</strong>,
+            onde eu possa combinar raciocínio analítico, domínio técnico e foco na
+            melhoria contínua dos processos.
+          </p>
+        </div>
+        <div class="value-list reveal">
+          <div><i class="fa-solid fa-chart-line"></i><span><strong>Análise orientada a perguntas</strong>KPIs conectados a decisões reais.</span></div>
+          <div><i class="fa-solid fa-gears"></i><span><strong>Automação com propósito</strong>Menos tarefas manuais, mais consistência.</span></div>
+          <div><i class="fa-solid fa-code-branch"></i><span><strong>Entrega ponta a ponta</strong>Do dado bruto à interface final.</span></div>
+        </div>
+      </div>
+    </section>
 
-            <div class="info-box">
-                <div class="text">
-                    <h3>Olá, sou</h3> <!-- Saudação -->
-                    <h1>Karlos Eduardo</h1> <!-- Nome do usuário -->
-                    <span>Software Developer | Data Analytics</span> <!-- Título profissional -->
-                </div>
+    <section class="section section-dark" id="competencias">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Stack & competências</p>
+          <h2>Ferramentas que uso para resolver problemas</h2>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <span class="skill-icon"><i class="fa-solid fa-chart-simple"></i></span>
+            <h3>Dados & BI</h3>
+            <p>Limpeza, exploração, indicadores, visualização e comunicação dos resultados.</p>
+            <div class="tags"><span>Python</span><span>Pandas</span><span>SQL</span><span>MySQL</span><span>Plotly</span><span>Streamlit</span></div>
+          </article>
+          <article class="skill-card reveal">
+            <span class="skill-icon"><i class="fa-solid fa-robot"></i></span>
+            <h3>Automação & RPA</h3>
+            <p>Automação de rotinas, manipulação de arquivos e integração de etapas repetitivas.</p>
+            <div class="tags"><span>Python</span><span>Selenium</span><span>APIs REST</span><span>Excel</span><span>Web Scraping</span></div>
+          </article>
+          <article class="skill-card reveal">
+            <span class="skill-icon"><i class="fa-solid fa-laptop-code"></i></span>
+            <h3>Desenvolvimento</h3>
+            <p>Interfaces responsivas e fundamentos para transformar análises em produtos utilizáveis.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git</span><span>GitHub</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                <div class="btn-grupo">
-                    <!-- Botão para download do currículo -->
-                    <a href="assets/dowloands/Curriculo de Karlos.pdf" download class="btn" id="download-cv">Download CV</a>
-                    
-                    <!-- Botão redireciona para a section CONTATO -->
-                    <a href="#contato"class="btn">Contato</a>
-                </div>
-                
+    <section class="section container" id="projetos">
+      <div class="section-heading split-heading reveal">
+        <div><p class="eyebrow">Projetos selecionados</p><h2>Cases que demonstram minha forma de trabalhar</h2></div>
+        <a href="https://github.com/karlosqwer?tab=repositories" target="_blank" rel="noopener">Todos os repositórios <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
 
-                <div class="social">
-                    <i class="fa-brands fa-github" onclick="window.open('https://github.com/karlosqwer', '_blank')"></i> <!-- Ícone do GitHub -->
-                    <i class="fa-brands fa-linkedin" onclick="window.open('https://www.linkedin.com/in/karlos-eduardo-414016253/', '_blank')"></i> <!-- Ícone do LinkedIn -->
-                </div>
+      <article class="featured-project reveal">
+        <div class="project-visual peoplepulse">
+          <div class="mock-window">
+            <div class="mock-top"><span></span><span></span><span></span></div>
+            <div class="mock-body">
+              <div class="mock-sidebar"></div>
+              <div class="mock-content">
+                <div class="mock-title"></div>
+                <div class="mock-kpis"><i></i><i></i><i></i><i></i></div>
+                <div class="mock-charts"><div class="bars"><b></b><b></b><b></b><b></b><b></b></div><div class="donut"></div></div>
+              </div>
             </div>
+          </div>
         </div>
+        <div class="project-copy">
+          <span class="project-label">Projeto em destaque · People Analytics</span>
+          <h3>PeoplePulse HR Analytics</h3>
+          <p>Dashboard executivo construído a partir de uma base sintética completa de RH. O projeto integra geração de dados, modelagem MySQL, regras de negócio e visualizações interativas.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> 107 mil registros de presença processados</li>
+            <li><i class="fa-solid fa-check"></i> Headcount, turnover, absenteísmo e desempenho</li>
+            <li><i class="fa-solid fa-check"></i> Pipeline reprodutível com seed e validações</li>
+          </ul>
+          <div class="tags"><span>Python</span><span>Pandas</span><span>MySQL</span><span>Streamlit</span><span>Plotly</span></div>
+          <div class="project-actions"><a class="text-link" href="https://github.com/karlosqwer/hr-analytics" target="_blank" rel="noopener">Ver case completo <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+      </article>
+
+      <article class="featured-project reverse reveal">
+        <div class="project-visual sales">
+          <img src="assets/images/imagens_projetos/sales-analytics.png" alt="Consultas do projeto Sales Analytics">
+        </div>
+        <div class="project-copy">
+          <span class="project-label">SQL & Business Intelligence</span>
+          <h3>Sales Analytics SQL</h3>
+          <p>Análise de vendas com banco relacional e consultas criadas para responder perguntas comerciais sobre receita, produtos, clientes e desempenho temporal.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Modelagem relacional e carga de dados</li>
+            <li><i class="fa-solid fa-check"></i> CTEs, views e window functions</li>
+            <li><i class="fa-solid fa-check"></i> Relatórios analíticos com Pandas</li>
+          </ul>
+          <div class="tags"><span>SQL</span><span>MySQL</span><span>Python</span><span>Pandas</span></div>
+          <div class="project-actions"><a class="text-link" href="https://github.com/karlosqwer/sales-analytics-sql" target="_blank" rel="noopener">Ver case completo <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+      </article>
     </section>
 
-    <section id="experiencia" class="experiencia">
-        <h2 class="titulo-section">Experiência</h2> <!-- Título da seção "Experiência" -->
-
-        <div class="experiencia-info">
-            <div class="grid">
-                <div class="grid-card">
-                    <i class="fa-solid fa-code"></i> <!-- Ícone representando a experiência na área de programação -->
-                    <span>Infortech</span> <!-- Nome da empresa -->
-                    <h3>1 ano</h3> <!-- Duração da experiência -->
-                    <p>Atualmente, trabalho na Infortech como helpdesk de software, oferecendo suporte remoto ao sistema Clipp Store na modalidade home office</p> <!-- Descrição da experiência -->
-                </div>
-
-                <div class="grid-card">
-                    <i class="fa-solid fa-file-code"></i> <!-- Ícone representando a experiência com codificação -->
-                    <span>Certsempre</span> <!-- Nome da empresa -->
-                    <h3>Projeto em andamento</h3> <!-- Duração da experiência -->
-                    <p>Um projeto desenvolvido para a CertSempre, focado na liberação de boletos por meio da API da Safe2Pay, onde fui responsável pelo design das telas e por toda a parte de front-end do sistema</p> <!-- Descrição da experiência -->
-                </div>
-
-                <div class="grid-card">
-                    <i class="fa-solid fa-laptop"></i> <!-- Ícone representando aprendizado online -->
-                    <span>Udemy</span> <!-- Nome da plataforma -->
-                    <h3>158 horas</h3> <!-- Duração da experiência -->
-                    <p>Javascript e TypeScript - front-end e back-end (Full Stack) - Node, Express, noSQL, React, hooks, Redux, Design Patterns</p> <!-- Descrição da experiência -->
-                </div>
-
-                <div class="grid-card">
-                    <i class="fa-solid fa-terminal"></i> <!-- Ícone representando terminal/CLI -->
-                    <span>Rocketseat</span> <!-- Nome da plataforma -->
-                    <h3>50h</h3> <!-- Duração da experiência -->
-                    <p>HTML, CSS, JavaScript, Git e Github
-                        Certificado de especialista em Discover
-                    </p> <!-- Descrição da experiência -->
-                </div>
-            </div>
-
-            <img src="assets/images/fotos/code-foto.jpeg" alt="Imagem de código"> <!-- Imagem representativa de codificação -->
+    <section class="section section-dark" id="experiencia">
+      <div class="container">
+        <div class="section-heading reveal"><p class="eyebrow">Trajetória</p><h2>Experiência e formação</h2></div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-meta">Experiência profissional</div>
+            <h3>Helpdesk de Software · Infortech</h3>
+            <p>Suporte remoto ao sistema Clipp Store, investigação de incidentes, orientação a usuários e acompanhamento de soluções. Experiência que fortaleceu comunicação, análise de problemas e foco no cliente.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-meta">Projeto aplicado</div>
+            <h3>Front-end · CertSempre</h3>
+            <p>Design e desenvolvimento das interfaces de uma solução para liberação de boletos integrada à API Safe2Pay, trabalhando a ponte entre requisitos, experiência do usuário e implementação.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-meta">Formação</div>
+            <h3>Análise e Desenvolvimento de Sistemas</h3>
+            <p>Formação superior em andamento, complementada por estudos práticos em Python, SQL, análise de dados, automação, JavaScript, APIs e controle de versão.</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section id="projetos" class="projetos">
-        <h2 class="titulo-section">Projetos Recentes</h2> <!-- Título da seção "Projetos" -->
-
-        <div class="projetos-grid">
-            <article class="projetos-card projeto-destaque">
-                <img src="assets/images/imagens_projetos/sales-analytics.png" alt="Consulta SQL do projeto Sales Analytics">
-                <h3>Sales Analytics SQL</h3>
-                <p>Projeto completo de análise de vendas com MySQL, SQL e Python. Inclui modelagem de banco relacional, consultas de negócio com CTEs e Window Functions, cálculo de KPIs e geração automática de relatórios com Pandas.</p>
-                <span class="tecnologias">MySQL • SQL • Python • Pandas</span>
-                <div class="btn-grupo">
-                    <a href="https://github.com/karlosqwer/sales-analytics-sql#readme" target="_blank" rel="noopener noreferrer" class="btn">Ver Projeto</a>
-                    <a href="https://github.com/karlosqwer/sales-analytics-sql" target="_blank" rel="noopener noreferrer" class="btn">Repositório GitHub</a>
-                </div>
-            </article>
-
-            <article class="projetos-card">
-                <img src="assets/images/imagens_projetos/portifolio-home.jpeg" alt="Página inicial do portfólio de Karlos Eduardo">
-                <h3>Projeto Portfólio</h3>
-                <p>Portfólio responsivo criado para apresentar minha trajetória, experiências e projetos. A aplicação utiliza HTML, CSS e JavaScript, com navegação intuitiva, layout moderno e adaptação para diferentes tamanhos de tela.</p>
-                <span class="tecnologias">HTML • CSS • JavaScript</span>
-                <div class="btn-grupo">
-                    <a href="https://karlosqwer.github.io/portifolio-website/" target="_blank" rel="noopener noreferrer" class="btn">Visualizar Projeto</a>
-                    <a href="https://github.com/karlosqwer/portifolio-website" target="_blank" rel="noopener noreferrer" class="btn">Repositório GitHub</a>
-                </div>
-            </article>
-
-            <article class="projetos-card">
-                <img src="assets/images/imagens_projetos/print-projeto.png" alt="Aplicação de clima integrada à OpenWeather API">
-                <h3>Projeto Clima com API</h3>
-                <p>Aplicação de clima que consome a OpenWeather API para exibir temperatura, umidade e condições climáticas de cidades em tempo real. O projeto demonstra consumo de API, tratamento de dados e interface responsiva.</p>
-                <span class="tecnologias">HTML • CSS • JavaScript • API REST</span>
-                <div class="btn-grupo">
-                    <a href="#" class="btn" aria-label="Link de demonstração do projeto de clima ainda não informado">Visualizar Projeto</a>
-                    <a href="https://github.com/karlosqwer" target="_blank" rel="noopener noreferrer" class="btn">Ver no GitHub</a>
-                </div>
-            </article>
-
-            <article class="projetos-card">
-                <img src="assets/images/imagens_projetos/projeto-rayssa.png" alt="Projeto de pedido romântico">
-                <h3>Projeto Pedido Romântico</h3>
-                <p>Experiência interativa desenvolvida com HTML, CSS e JavaScript, utilizando animações e elementos personalizados para criar uma página afetiva, responsiva e visualmente marcante.</p>
-                <span class="tecnologias">HTML • CSS • JavaScript</span>
-                <div class="btn-grupo">
-                    <a href="https://karlosqwer.github.io/pedido-romantico-rayssinha/" target="_blank" rel="noopener noreferrer" class="btn">Visualizar Projeto</a>
-                    <a href="https://github.com/karlosqwer/pedido-romantico-rayssinha" target="_blank" rel="noopener noreferrer" class="btn">Repositório GitHub</a>
-                </div>
-            </article>
+    <section class="section contact container" id="contato">
+      <div class="contact-card reveal">
+        <div>
+          <p class="eyebrow">Próximo passo</p>
+          <h2>Tem um desafio em dados ou automação?</h2>
+          <p>Estou disponível para oportunidades de estágio e posições júnior. Vamos conversar sobre como posso contribuir e continuar evoluindo com o time.</p>
         </div>
-    </section>
-
-    <section class="contato" id="contato">
-        <div class="contato-links">
-            <h2 class="titulo-section">Entre em contato</h2> <!-- Título da seção "Contato" -->
-
-            <div class="contato-icones">
-                <div class="linkedin">
-                    <i class="fa-brands fa-linkedin" onclick="window.open('https://www.linkedin.com/in/karlos-eduardo-414016253/', '_blank')"></i>
-                </div>
-
-                <div class="email">
-                    <i class="fa-solid fa-envelope" onclick="window.open('mailto:contatokarlos12@gmail.com');"></i>
-                </div>
-
-                <div class="whatsapp">
-                    <i class="fa-brands fa-whatsapp" onclick="window.open('https://wa.me/5583981590313', '_blank')"></i>
-                </div>
-
-                <div class="github">
-                    <i class="fa-brands fa-github" onclick="window.open('https://github.com/karlosqwer', '_blank')"></i>
-                </div>
-            </div>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:contatokarlos12@gmail.com">Enviar e-mail <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="button button-ghost" href="https://www.linkedin.com/in/karlos-eduardo-414016253/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
+      </div>
     </section>
+  </main>
 
-    <footer>
-        <ul>
-            <li>
-                <a href="#sobre">Sobre</a> <!-- Link para a seção "Sobre" -->
-            </li>
-            <li>
-                <a href="#experiencia">Experiência</a> <!-- Link para a seção "Experiência" -->
-            </li>
-            <li>
-                <a href="#projetos">Projetos</a> <!-- Link para a seção "Projetos" -->
-            </li>
-            <li>
-                <a href="#contato">Contato</a> <!-- Link para a seção "Contato" -->
-            </li>
-        </ul>
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Karlos Eduardo</span>
+      <span>Construído com propósito, dados e código.</span>
+    </div>
+  </footer>
 
-        <p><div class="copyright">© Todos os direitos reservados | Karlos Eduardo</div></p> <!-- Mensagem de direitos autorais -->
-    </footer>
-
-    <script src="assets/javascript/script.js"></script> <!-- Link para o arquivo JavaScript que adiciona interatividade à página -->
+  <script src="assets/javascript/script.js"></script>
 </body>
 </html>
