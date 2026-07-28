@@ -2,234 +2,273 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Portfólio de Karlos Eduardo — Data Analytics, Python, SQL e automação de processos.">
-  <meta name="theme-color" content="#08111f">
-  <title>Karlos Eduardo | Data Analytics & Python</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfólio de Karlos Eduardo, desenvolvedor Backend Python com foco em APIs, automação, SQL e soluções orientadas por dados.">
+  <meta name="author" content="Karlos Eduardo">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Karlos Eduardo — Backend Python & Dados">
+  <meta property="og:description" content="Backend Python, APIs e dados transformados em soluções confiáveis.">
+  <meta property="og:image" content="assets/images/imagens_projetos/print-projeto.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Karlos Eduardo — Backend Python & Dados">
+  <meta name="twitter:description" content="Backend Python, APIs e dados transformados em soluções confiáveis.">
+  <meta name="twitter:image" content="assets/images/imagens_projetos/print-projeto.png">
+  <title>Karlos Eduardo — Backend Python & Dados</title>
+  <link rel="icon" href="assets/images/favicon/favicon.ico">
   <link rel="stylesheet" href="assets/styles/style.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Karlos Eduardo",
+      "url": "https://github.com/karlosqwer",
+      "email": "mailto:contatokarlos12@gmail.com",
+      "jobTitle": "Desenvolvedor Backend Python",
+      "sameAs": [
+        "https://github.com/karlosqwer",
+        "https://www.linkedin.com/in/karlos-eduardo-414016253/"
+      ],
+      "knowsAbout": ["Python", "APIs REST", "SQL", "MySQL", "Análise de dados", "Power BI"]
+    }
+  </script>
 </head>
 <body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <header>
-    <nav class="container nav">
-      <a class="brand" href="#inicio" aria-label="Início">
-        <span class="brand-mark">KE</span><span>Karlos Eduardo</span>
+  <header class="site-header" data-header>
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Karlos Eduardo, início">
+        <span class="brand-symbol" aria-hidden="true">K</span>
+        <span>Karlos Eduardo</span>
       </a>
-      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
-      <div class="nav-links">
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#inicio">Home</a>
         <a href="#sobre">Sobre</a>
-        <a href="#competencias">Competências</a>
         <a href="#projetos">Projetos</a>
+        <a href="#tecnologias">Tecnologias</a>
         <a href="#experiencia">Experiência</a>
+        <a href="#contato">Contato</a>
       </div>
-      <a class="button button-small button-outline nav-cta" href="#contato">Vamos conversar</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero container" id="inicio">
-      <div class="hero-copy reveal">
-        <div class="available"><span></span> Disponível para oportunidades</div>
-        <p class="eyebrow">Data Analytics · Python · Automação</p>
-        <h1>Transformo dados e processos em <span>soluções que funcionam.</span></h1>
-        <p class="hero-text">
-          Sou Karlos Eduardo, estudante de Análise e Desenvolvimento de Sistemas.
-          Construo análises com Python e SQL, dashboards para decisão e automações
-          que eliminam tarefas repetitivas.
+  <main id="conteudo">
+    <section class="hero container" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-content reveal">
+        <p class="status"><span aria-hidden="true"></span> Disponível para estágio e posições júnior</p>
+        <p class="kicker">Backend Python · APIs · Dados</p>
+        <h1 id="hero-title">Karlos Eduardo</h1>
+        <p class="hero-statement">Construo backends confiáveis e transformo dados em decisões.</p>
+        <p class="hero-description">
+          Estudante de Análise e Desenvolvimento de Sistemas, com foco em Python,
+          APIs REST, SQL e automação de processos.
         </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#projetos">Ver projetos <i class="fa-solid fa-arrow-down"></i></a>
-          <a class="button button-ghost" href="assets/dowloands/Curriculo de Karlos.pdf" download>Baixar currículo</a>
-        </div>
-        <div class="social-row">
-          <a href="https://github.com/karlosqwer" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
-          <a href="https://www.linkedin.com/in/karlos-eduardo-414016253/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          <a href="mailto:contatokarlos12@gmail.com"><i class="fa-solid fa-envelope"></i> E-mail</a>
+        <div class="hero-actions" aria-label="Links principais">
+          <a class="button button-primary" href="#projetos">Ver projetos <span aria-hidden="true">↓</span></a>
+          <a class="button" href="https://github.com/karlosqwer" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="text-action" href="https://www.linkedin.com/in/karlos-eduardo-414016253/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="text-action" href="assets/dowloands/Curriculo de Karlos.pdf" download>Currículo</a>
         </div>
       </div>
+      <aside class="hero-note reveal" aria-label="Resumo profissional">
+        <p>Em busca da primeira oportunidade para contribuir com produtos reais, aprender com times experientes e entregar software de qualidade.</p>
+        <dl>
+          <div><dt>Foco</dt><dd>Backend Python</dd></div>
+          <div><dt>Complemento</dt><dd>Dados & BI</dd></div>
+          <div><dt>Localização</dt><dd>Brasil · Remoto</dd></div>
+        </dl>
+      </aside>
+    </section>
 
-      <div class="hero-visual reveal">
-        <div class="profile-frame">
-          <div class="profile-glow"></div>
-          <img src="assets/images/fotos/imagem-perfil.png" alt="Karlos Eduardo">
-          <div class="floating-card card-python"><i class="fa-brands fa-python"></i><span>Python<br><small>Dados & automação</small></span></div>
-          <div class="floating-card card-sql"><i class="fa-solid fa-database"></i><span>SQL<br><small>Análise de negócio</small></span></div>
-        </div>
+    <section class="signal-strip" aria-label="Principais competências">
+      <div class="container signal-list">
+        <span>Python</span>
+        <span>APIs REST</span>
+        <span>SQL & MySQL</span>
+        <span>Automação</span>
+        <span>Git & GitHub</span>
       </div>
     </section>
 
-    <section class="proof">
-      <div class="container proof-grid">
-        <div><strong>500+</strong><span>registros de pessoas analisados</span></div>
-        <div><strong>107 mil</strong><span>registros processados em um case</span></div>
-        <div><strong>2</strong><span>projetos completos de analytics</span></div>
-        <div><strong>100%</strong><span>dados sintéticos e reproduzíveis</span></div>
+    <section class="section container" id="sobre" aria-labelledby="about-title">
+      <div class="section-intro reveal">
+        <p class="section-index">01 / Sobre</p>
+        <h2 id="about-title">Tecnologia útil começa com um problema bem compreendido.</h2>
       </div>
-    </section>
-
-    <section class="section container" id="sobre">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Sobre mim</p>
-        <h2>Perfil técnico com visão de negócio</h2>
-      </div>
-      <div class="about-grid">
+      <div class="about-layout">
+        <figure class="portrait reveal">
+          <img src="assets/images/fotos/imagem-perfil.png" alt="Retrato de Karlos Eduardo" width="638" height="636" loading="lazy" decoding="async">
+        </figure>
         <div class="about-copy reveal">
           <p>
-            Minha experiência com suporte de software me ensinou a ouvir usuários,
-            investigar problemas e explicar soluções com clareza. Hoje aplico essa
-            base na análise de dados e no desenvolvimento de automações.
+            Gosto de investigar problemas, organizar informações e construir soluções
+            simples de manter. No backend, encontro a combinação que procuro entre
+            lógica, arquitetura e impacto no produto.
           </p>
           <p>
-            Busco uma oportunidade de entrada em <strong>Dados, Python ou RPA</strong>,
-            onde eu possa combinar raciocínio analítico, domínio técnico e foco na
-            melhoria contínua dos processos.
+            Dados complementam esse trabalho: ajudam a validar decisões, automatizar
+            rotinas e tornar sistemas mais inteligentes. Estudo continuamente e
+            valorizo código legível, documentação clara e entregas consistentes.
           </p>
-        </div>
-        <div class="value-list reveal">
-          <div><i class="fa-solid fa-chart-line"></i><span><strong>Análise orientada a perguntas</strong>KPIs conectados a decisões reais.</span></div>
-          <div><i class="fa-solid fa-gears"></i><span><strong>Automação com propósito</strong>Menos tarefas manuais, mais consistência.</span></div>
-          <div><i class="fa-solid fa-code-branch"></i><span><strong>Entrega ponta a ponta</strong>Do dado bruto à interface final.</span></div>
+          <ul class="principles" aria-label="Princípios de trabalho">
+            <li><span>01</span> Entender antes de implementar</li>
+            <li><span>02</span> Escrever código para ser mantido</li>
+            <li><span>03</span> Comunicar decisões com clareza</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" id="competencias">
+    <section class="section projects-section" id="projetos" aria-labelledby="projects-title">
       <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Stack & competências</p>
-          <h2>Ferramentas que uso para resolver problemas</h2>
+        <div class="section-intro reveal">
+          <p class="section-index">02 / Projetos selecionados</p>
+          <h2 id="projects-title">Projetos tratados como produto, não apenas como código.</h2>
+          <p>Cases que mostram raciocínio, decisões técnicas e capacidade de entrega.</p>
         </div>
-        <div class="skills-grid">
-          <article class="skill-card reveal">
-            <span class="skill-icon"><i class="fa-solid fa-chart-simple"></i></span>
-            <h3>Dados & BI</h3>
-            <p>Limpeza, exploração, indicadores, visualização e comunicação dos resultados.</p>
-            <div class="tags"><span>Python</span><span>Pandas</span><span>SQL</span><span>MySQL</span><span>Plotly</span><span>Streamlit</span></div>
-          </article>
-          <article class="skill-card reveal">
-            <span class="skill-icon"><i class="fa-solid fa-robot"></i></span>
-            <h3>Automação & RPA</h3>
-            <p>Automação de rotinas, manipulação de arquivos e integração de etapas repetitivas.</p>
-            <div class="tags"><span>Python</span><span>Selenium</span><span>APIs REST</span><span>Excel</span><span>Web Scraping</span></div>
-          </article>
-          <article class="skill-card reveal">
-            <span class="skill-icon"><i class="fa-solid fa-laptop-code"></i></span>
-            <h3>Desenvolvimento</h3>
-            <p>Interfaces responsivas e fundamentos para transformar análises em produtos utilizáveis.</p>
-            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git</span><span>GitHub</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section container" id="projetos">
-      <div class="section-heading split-heading reveal">
-        <div><p class="eyebrow">Projetos selecionados</p><h2>Cases que demonstram minha forma de trabalhar</h2></div>
-        <a href="https://github.com/karlosqwer?tab=repositories" target="_blank" rel="noopener">Todos os repositórios <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-      </div>
-
-      <article class="featured-project reveal">
-        <div class="project-visual peoplepulse">
-          <div class="mock-window">
-            <div class="mock-top"><span></span><span></span><span></span></div>
-            <div class="mock-body">
-              <div class="mock-sidebar"></div>
-              <div class="mock-content">
-                <div class="mock-title"></div>
-                <div class="mock-kpis"><i></i><i></i><i></i><i></i></div>
-                <div class="mock-charts"><div class="bars"><b></b><b></b><b></b><b></b><b></b></div><div class="donut"></div></div>
+        <article class="case reveal">
+          <div class="case-visual case-dashboard" aria-label="Prévia visual do dashboard PeoplePulse">
+            <div class="dashboard-shell">
+              <div class="dashboard-top"><span></span><span></span><span></span><strong>PeoplePulse / Overview</strong></div>
+              <div class="dashboard-body">
+                <div class="dashboard-kpis"><i></i><i></i><i></i><i></i></div>
+                <div class="dashboard-grid">
+                  <div class="chart-bars"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+                  <div class="chart-ring"></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="project-copy">
-          <span class="project-label">Projeto em destaque · People Analytics</span>
-          <h3>PeoplePulse HR Analytics</h3>
-          <p>Dashboard executivo construído a partir de uma base sintética completa de RH. O projeto integra geração de dados, modelagem MySQL, regras de negócio e visualizações interativas.</p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> 107 mil registros de presença processados</li>
-            <li><i class="fa-solid fa-check"></i> Headcount, turnover, absenteísmo e desempenho</li>
-            <li><i class="fa-solid fa-check"></i> Pipeline reprodutível com seed e validações</li>
-          </ul>
-          <div class="tags"><span>Python</span><span>Pandas</span><span>MySQL</span><span>Streamlit</span><span>Plotly</span></div>
-          <div class="project-actions"><a class="text-link" href="https://github.com/karlosqwer/hr-analytics" target="_blank" rel="noopener">Ver case completo <i class="fa-solid fa-arrow-right"></i></a></div>
-        </div>
-      </article>
+          <div class="case-content">
+            <div class="case-heading">
+              <span class="case-number">01</span>
+              <div><p class="case-type">Python · Dados · Dashboard</p><h3>PeoplePulse HR Analytics</h3></div>
+            </div>
+            <p class="case-summary">Pipeline e dashboard executivo para transformar dados de RH em indicadores acionáveis.</p>
+            <div class="case-details">
+              <div><h4>Problema</h4><p>Informações de pessoas dispersas e difíceis de interpretar para decisões de gestão.</p></div>
+              <div><h4>Solução</h4><p>Geração de dados, modelagem MySQL, regras de negócio e visualizações reunidas em um fluxo reproduzível.</p></div>
+              <div><h4>Aprendizados</h4><p>Validação de dados, definição de KPIs e construção de uma entrega analítica ponta a ponta.</p></div>
+            </div>
+            <ul class="tech-list" aria-label="Tecnologias do PeoplePulse">
+              <li>Python</li><li>Pandas</li><li>MySQL</li><li>Streamlit</li><li>Plotly</li>
+            </ul>
+            <div class="case-actions">
+              <a class="button button-small" href="https://github.com/karlosqwer/hr-analytics" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+              <span class="case-metric">107 mil registros processados</span>
+            </div>
+          </div>
+        </article>
 
-      <article class="featured-project reverse reveal">
-        <div class="project-visual sales">
-          <img src="assets/images/imagens_projetos/sales-analytics.png" alt="Consultas do projeto Sales Analytics">
-        </div>
-        <div class="project-copy">
-          <span class="project-label">SQL & Business Intelligence</span>
-          <h3>Sales Analytics SQL</h3>
-          <p>Análise de vendas com banco relacional e consultas criadas para responder perguntas comerciais sobre receita, produtos, clientes e desempenho temporal.</p>
-          <ul>
-            <li><i class="fa-solid fa-check"></i> Modelagem relacional e carga de dados</li>
-            <li><i class="fa-solid fa-check"></i> CTEs, views e window functions</li>
-            <li><i class="fa-solid fa-check"></i> Relatórios analíticos com Pandas</li>
-          </ul>
-          <div class="tags"><span>SQL</span><span>MySQL</span><span>Python</span><span>Pandas</span></div>
-          <div class="project-actions"><a class="text-link" href="https://github.com/karlosqwer/sales-analytics-sql" target="_blank" rel="noopener">Ver case completo <i class="fa-solid fa-arrow-right"></i></a></div>
-        </div>
-      </article>
+        <article class="case reveal">
+          <div class="case-visual">
+            <img src="assets/images/imagens_projetos/sales-analytics.png" alt="Consulta SQL com ranking de clientes no MySQL Workbench" width="1108" height="998" loading="lazy" decoding="async">
+          </div>
+          <div class="case-content">
+            <div class="case-heading">
+              <span class="case-number">02</span>
+              <div><p class="case-type">SQL · Banco de dados · Analytics</p><h3>Sales Analytics SQL</h3></div>
+            </div>
+            <p class="case-summary">Banco relacional e consultas analíticas para responder perguntas comerciais com dados.</p>
+            <div class="case-details">
+              <div><h4>Problema</h4><p>Dados transacionais sem uma visão clara de receita, produtos, clientes e evolução temporal.</p></div>
+              <div><h4>Solução</h4><p>Modelagem relacional e consultas com joins, CTEs, views e window functions para gerar análises reutilizáveis.</p></div>
+              <div><h4>Aprendizados</h4><p>Qualidade de modelagem, desempenho de consultas e tradução de perguntas de negócio para SQL.</p></div>
+            </div>
+            <ul class="tech-list" aria-label="Tecnologias do Sales Analytics">
+              <li>SQL</li><li>MySQL</li><li>Python</li><li>Pandas</li>
+            </ul>
+            <div class="case-actions">
+              <a class="button button-small" href="https://github.com/karlosqwer/sales-analytics-sql" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+
+        <a class="all-projects reveal" href="https://github.com/karlosqwer?tab=repositories" target="_blank" rel="noopener noreferrer">
+          Ver todos os repositórios <span aria-hidden="true">↗</span>
+        </a>
+      </div>
     </section>
 
-    <section class="section section-dark" id="experiencia">
+    <section class="section container" id="tecnologias" aria-labelledby="stack-title">
+      <div class="section-intro reveal">
+        <p class="section-index">03 / Tecnologias</p>
+        <h2 id="stack-title">Uma stack objetiva para construir e analisar.</h2>
+      </div>
+      <div class="stack-grid">
+        <article class="stack-group reveal">
+          <p>01</p><h3>Backend & Dados</h3>
+          <ul><li>Python</li><li>APIs REST</li><li>SQL</li><li>MySQL</li><li>Pandas</li></ul>
+        </article>
+        <article class="stack-group reveal">
+          <p>02</p><h3>Frontend</h3>
+          <ul><li>HTML semântico</li><li>CSS responsivo</li><li>JavaScript</li></ul>
+        </article>
+        <article class="stack-group reveal">
+          <p>03</p><h3>Ferramentas</h3>
+          <ul><li>Git</li><li>GitHub</li><li>Power BI</li><li>VS Code</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section experience-section" id="experiencia" aria-labelledby="experience-title">
       <div class="container">
-        <div class="section-heading reveal"><p class="eyebrow">Trajetória</p><h2>Experiência e formação</h2></div>
+        <div class="section-intro reveal">
+          <p class="section-index">04 / Trajetória</p>
+          <h2 id="experience-title">Experiência que desenvolveu técnica e responsabilidade.</h2>
+        </div>
         <div class="timeline">
           <article class="timeline-item reveal">
-            <span class="timeline-dot"></span>
-            <div class="timeline-meta">Experiência profissional anterior</div>
-            <h3>Helpdesk de Software · Infortech</h3>
-            <p>Suporte remoto ao sistema Clipp Store, investigação de incidentes, orientação a usuários e acompanhamento de soluções. Experiência que fortaleceu comunicação, análise de problemas e foco no cliente.</p>
+            <div class="timeline-meta"><span>Profissional</span><time>Experiência anterior</time></div>
+            <div><h3>Helpdesk de Software · Infortech</h3><p>Suporte remoto ao Clipp Store, investigação de incidentes e orientação a usuários. A experiência fortaleceu diagnóstico, comunicação e foco na resolução.</p></div>
           </article>
           <article class="timeline-item reveal">
-            <span class="timeline-dot"></span>
-            <div class="timeline-meta">Projeto aplicado</div>
-            <h3>Front-end · CertSempre</h3>
-            <p>Design e desenvolvimento das interfaces de uma solução para liberação de boletos integrada à API Safe2Pay, trabalhando a ponte entre requisitos, experiência do usuário e implementação.</p>
+            <div class="timeline-meta"><span>Projeto aplicado</span><time>Experiência anterior</time></div>
+            <div><h3>Frontend · CertSempre</h3><p>Desenvolvimento de interfaces para uma solução de liberação de boletos integrada à API Safe2Pay, conectando requisitos, experiência do usuário e implementação.</p></div>
           </article>
           <article class="timeline-item reveal">
-            <span class="timeline-dot"></span>
-            <div class="timeline-meta">Formação</div>
-            <h3>Análise e Desenvolvimento de Sistemas · Universidade Descomplica</h3>
-            <p>Formação superior em andamento (2026.1–2028.2), complementada por estudos práticos em Python, SQL, análise de dados, automação, JavaScript, APIs e controle de versão.</p>
+            <div class="timeline-meta"><span>Formação</span><time>2026 — 2028</time></div>
+            <div><h3>Análise e Desenvolvimento de Sistemas</h3><p>Graduação em andamento na Universidade Descomplica, complementada por projetos práticos em Python, APIs, SQL, automação e análise de dados.</p></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section contact container" id="contato">
-      <div class="contact-card reveal">
-        <div>
-          <p class="eyebrow">Próximo passo</p>
-          <h2>Tem um desafio em dados ou automação?</h2>
-          <p>Estou disponível para oportunidades de estágio e posições júnior. Vamos conversar sobre como posso contribuir e continuar evoluindo com o time.</p>
-        </div>
+    <section class="section contact container" id="contato" aria-labelledby="contact-title">
+      <div class="contact-content reveal">
+        <p class="section-index">05 / Contato</p>
+        <h2 id="contact-title">Vamos construir algo útil.</h2>
+        <p>Estou disponível para oportunidades em Backend Python e Dados, com interesse em times que valorizam aprendizado, qualidade e colaboração.</p>
         <div class="contact-actions">
-          <a class="button button-primary" href="mailto:contatokarlos12@gmail.com">Enviar e-mail <i class="fa-solid fa-arrow-right"></i></a>
-          <a class="button button-ghost" href="https://www.linkedin.com/in/karlos-eduardo-414016253/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button button-primary" href="mailto:contatokarlos12@gmail.com">Enviar e-mail <span aria-hidden="true">↗</span></a>
+          <a class="button" href="assets/dowloands/Curriculo de Karlos.pdf" download>Baixar currículo</a>
         </div>
       </div>
+      <address class="contact-links reveal">
+        <a href="mailto:contatokarlos12@gmail.com"><span>E-mail</span><strong>contatokarlos12@gmail.com</strong></a>
+        <a href="https://github.com/karlosqwer" target="_blank" rel="noopener noreferrer"><span>GitHub</span><strong>@karlosqwer ↗</strong></a>
+        <a href="https://www.linkedin.com/in/karlos-eduardo-414016253/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>Karlos Eduardo ↗</strong></a>
+      </address>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> Karlos Eduardo</span>
-      <span>Construído com propósito, dados e código.</span>
+      <p>© <span id="year"></span> Karlos Eduardo</p>
+      <p>Backend Python · Dados</p>
     </div>
   </footer>
 
-  <script src="assets/javascript/script.js"></script>
+  <button class="back-to-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+  <script src="assets/javascript/script.js" defer></script>
 </body>
 </html>

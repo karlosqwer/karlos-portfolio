@@ -1,42 +1,117 @@
-# Portfólio de Karlos (ATUALMENTE EM CONSTRUÇÃO)
+# Karlos Eduardo — Portfólio
 
-![Captura do Projeto](assets/images/imagens_projetos/print-projeto.png)
+Portfólio profissional de **Karlos Eduardo**, estudante de Análise e
+Desenvolvimento de Sistemas com foco em **Backend Python, APIs REST, SQL e
+soluções orientadas por dados**.
 
-## Introdução
+O projeto foi desenvolvido como uma landing page responsiva, rápida e
+acessível. Sua estrutura prioriza o que recrutadores e lideranças técnicas
+precisam identificar com rapidez: posicionamento profissional, projetos
+verificáveis, decisões técnicas, experiência e formas de contato.
 
-Bem-vindo ao meu portfólio, uma vitrine das minhas habilidades e experiências como desenvolvedor front-end. Este espaço foi cuidadosamente projetado para demonstrar minha capacidade de criar soluções digitais que não apenas atendem às necessidades dos usuários, mas também superam suas expectativas.
+## Visão geral
 
-## Sobre Mim
+- Posicionamento principal em Backend Python.
+- Dados e BI apresentados como competências complementares.
+- Projetos documentados como cases: problema, solução, tecnologias e aprendizados.
+- Interface dark minimalista inspirada em produtos como Vercel, Linear e Stripe.
+- Navegação responsiva e otimizada para dispositivos móveis.
+- Código sem frameworks ou dependências JavaScript externas.
 
-Sou Karlos, um desenvolvedor front-end comprometido com a excelência em design e usabilidade. Minha abordagem se concentra na criação de experiências digitais integradas e acessíveis, utilizando as melhores práticas do setor. Com uma sólida compreensão das tecnologias web, estou sempre em busca de inovação e aperfeiçoamento, buscando novas maneiras de entregar valor através do código.
+## Projetos apresentados
 
-## Responsividade e Design
+### PeoplePulse HR Analytics
 
-O design do meu portfólio foi elaborado para ser completamente responsivo, garantindo uma experiência de usuário excepcional em qualquer dispositivo, seja desktop, tablet ou smartphone. Utilizo um layout minimalista que prioriza a clareza e a navegabilidade, permitindo que os usuários se concentrem no conteúdo.
+Pipeline e dashboard executivo para transformar dados de Recursos Humanos em
+indicadores acionáveis. O projeto reúne geração de dados, modelagem MySQL,
+validações, regras de negócio e visualizações interativas.
 
-## Funcionalidades
+**Tecnologias:** Python, Pandas, MySQL, Streamlit e Plotly.
 
-Este portfólio exemplifica minha experiência em desenvolvimento front-end e interação com o usuário. Entre as funcionalidades destacadas estão:
+[Acessar repositório](https://github.com/karlosqwer/hr-analytics)
 
-- **Animações Dinâmicas**: Criação de interações suaves que aprimoram a experiência do usuário.
-- **Formulário de Contato Otimizado**: Um sistema de comunicação direto e eficiente, projetado para facilitar o contato com potenciais clientes e empregadores.
-- **Navegação Intuitiva**: Estrutura de navegação clara que permite um acesso rápido e fácil a todas as seções.
+### Sales Analytics SQL
 
-## Projetos Destacados
+Banco relacional e consultas analíticas voltadas a perguntas comerciais sobre
+receita, clientes, produtos e evolução temporal.
 
-Abaixo, apresento alguns dos projetos que exemplificam meu trabalho e habilidades:
+**Tecnologias:** SQL, MySQL, Python e Pandas.
 
-- **[Nome do Projeto 1](link-do-projeto-1)**: ULorem
-- **[Nome do Projeto 2](link-do-projeto-2)**: Lorem
-- **[Nome do Projeto 3](link-do-projeto-3)**: Lorem 
+[Acessar repositório](https://github.com/karlosqwer/sales-analytics-sql)
 
-## Conclusão
+## Tecnologias do portfólio
 
-Agradeço por visitar meu portfólio. Estou sempre aberto a novas oportunidades e colaborações que permitam explorar o potencial da tecnologia e criar soluções inovadoras. 
+- HTML5 semântico
+- CSS3
+- JavaScript
+- JSON-LD
 
-### Contato
+## Qualidade e experiência
 
-**Email**: [contatokarlos12@gmail.com](mailto:contatokarlos12@gmail.com)  
-**LinkedIn**: [Karlos Eduardo](https://www.linkedin.com/in/karlos-eduardo-414016253/)
+O portfólio inclui:
 
-Estou ansioso para discutir como posso contribuir para o seu próximo projeto!
+- Metadados para SEO, Open Graph e Twitter Card.
+- Dados estruturados com Schema.org.
+- Navegação por teclado e link para pular ao conteúdo.
+- Textos alternativos em imagens e atributos ARIA.
+- Estados de foco visíveis e contraste adequado ao tema escuro.
+- Suporte a `prefers-reduced-motion` e `prefers-contrast`.
+- Imagens secundárias com carregamento tardio.
+- Menu móvel acessível.
+- Navegação ativa conforme a seção visualizada.
+- Animações discretas com `IntersectionObserver`.
+- Botão para voltar ao topo.
+
+## Estrutura
+
+```text
+karlos-portfolio/
+├── assets/
+│   ├── dowloands/
+│   │   └── Curriculo de Karlos.pdf
+│   ├── images/
+│   │   ├── favicon/
+│   │   ├── fotos/
+│   │   └── imagens_projetos/
+│   ├── javascript/
+│   │   └── script.js
+│   └── styles/
+│       └── style.css
+├── index.html
+└── README.md
+```
+
+## Executar localmente
+
+Não é necessário instalar dependências.
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/karlosqwer/karlos-portfolio.git
+   ```
+
+2. Entre na pasta:
+
+   ```bash
+   cd karlos-portfolio
+   ```
+
+3. Abra o arquivo `index.html` no navegador ou inicie um servidor local:
+
+   ```bash
+   python -m http.server 8000
+   ```
+
+4. Acesse `http://localhost:8000`.
+
+## Contato
+
+- [LinkedIn](https://www.linkedin.com/in/karlos-eduardo-414016253/)
+- [GitHub](https://github.com/karlosqwer)
+- [E-mail](mailto:contatokarlos12@gmail.com)
+- [Currículo](assets/dowloands/Curriculo%20de%20Karlos.pdf)
+
+---
+
+Desenvolvido por **Karlos Eduardo**.
