@@ -15,15 +15,24 @@ let parsedModel = null;
 let glbBuffer = null;
 const nodes = [];
 const pivots = {doors:[],drawer:null,front:null};
-const state = {mode:'complete', night:false, led:true, panels:true, equipment:true, poly:true, open:false,drawer:false, rotate:false, labels:false};
+const state = {mode:'complete', night:false, led:true, panels:true, equipment:true, poly:true, open:false,drawer:false, rotate:false, labels:false, showWorkbench:false, bay:'overview'};
 const motion = [];
 const bound = {min:new THREE.Vector3(-2.07,.06,-.99),max:new THREE.Vector3(.84,2.51,.99)};
 const technical = new THREE.Group();
 let ambient, hemi, sun, ledLights=[];
+const baySpecs = {
+ overview:{title:'Visão em corte de todos os armários',detail:'Bancada e cobertura ocultas. Os módulos inferiores ficam expostos para inspeção.',point:[.00,.80,0],camera:[2.25,2.75,2.65],frame:null},
+ cooler:{title:'Caixa térmica · 40–50 L',detail:'Alojada na primeira porta da operadora (P12), sob a bancada.',point:[-.49,.76,.06],camera:[-.85,1.55,1.85],frame:[-.48,.79,0,.56,.56,1.08]},
+ cash:{title:'Gaveta de dinheiro e reserva de copos',detail:'Módulo central sob a bancada. Gaveta telescópica com fechadura; dimensões locais ilustrativas.',point:[.08,.87,.18],camera:[.1,1.6,1.85],frame:[.09,.80,0,.43,.58,1.08]},
+ sink:{title:'Pia, dispensers e cofre',detail:'Compartimento da operadora ao lado da cuba; espaços representados esquematicamente.',point:[.57,.78,.20],camera:[.82,1.52,1.79],frame:[.55,.78,0,.4,.56,1.08]},
+ battery:{title:'Bateria 12 V e quadro elétrico',detail:'Acesso técnico pelo lado do cliente, por trás do painel removível.',point:[.13,.69,-.19],camera:[-.13,1.46,-1.82],frame:[.11,.72,-.24,.42,.44,.48]},
+ tanks:{title:'Água limpa e água servida · 20 L cada',detail:'Reservatórios, bomba e tubulações no lado do cliente; conferir montagem hidráulica no projeto.',point:[.56,.70,-.04],camera:[.95,1.48,-1.83],frame:[.56,.76,-.04,.37,.52,.87]}
+};
+let bayMarker = null;
 const camPositions={
  iso:[3.45,2.70,3.75], operator:[0.25,1.5,5.0], front:[-5.00,1.40,0.01], back:[5.00,1.40,0.01],
  side:[0.01,1.50,5.00], client:[0.25,1.7,-5.00],
- top:[.09,5.5,.01], interior:[1.60,1.95,3.3]
+ top:[.09,5.5,.01], interior:[2.25,2.6,2.9]
 };
 const targetPoint = new THREE.Vector3(-.25,1.24,0);
 const mats = {gold:0xffd05b, dark:0x073a26};
@@ -112,6 +121,7 @@ async function loadEmbedded(){
         }
       });
       createInteractiveParts();
+      createBayMarker();
       setupEvents();
       applyMode();
       loading.classList.add('done');
@@ -146,6 +156,33 @@ function createInteractiveParts(){
   if(drawerMesh){pivots.drawer=new THREE.Group();pivots.drawer.name='Gaveta dinheiro telescopica';root.add(pivots.drawer);pivots.drawer.add(drawerMesh);}
   const frontSlot=byPrefix('Gaveta fenda frente')[0];if(pivots.drawer&&frontSlot)pivots.drawer.add(frontSlot);
 }
+
+function createBayMarker(){
+  // A yellow wireframe highlights the internal volume without modifying the GLB.
+  bayMarker=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(1,1,1)),new THREE.LineBasicMaterial({color:0xffba26,depthTest:false,transparent:true,opacity:.96}));
+  bayMarker.renderOrder=60;bayMarker.visible=false;scene.add(bayMarker);
+}
+function showBay(key){
+  if(!baySpecs[key])key='overview';
+  state.bay=key;
+  if(state.mode!=='interior'){
+    state.mode='interior';state.night=false;state.panels=false;state.poly=false;state.showWorkbench=false;state.equipment=true;
+  }
+  applyMode();
+  const bay=baySpecs[key];
+  if(bayMarker){
+    bayMarker.visible=!!bay.frame;
+    if(bay.frame){const [x,y,z,w,h,d]=bay.frame;bayMarker.position.set(x,y,z);bayMarker.scale.set(w,h,d)}
+  }
+  camera.up.set(0,1,0);
+  camera.position.set(...bay.camera);
+  orbit.target.set(...bay.point);orbit.update();
+  byId('viewSelect').value='interior';
+  byId('baySelect').value=key;
+  byId('bayInfo').innerHTML=`<strong>${escapeHTML(bay.title)}</strong><span>${escapeHTML(bay.detail)}</span>`;
+  setStatus(`Compartimento: ${bay.title} · arraste para girar, pinça para aproximar`);
+}
+
 function tween(target,property,to,speed=5){
   for(let i=motion.length-1;i>=0;i--)if(motion[i].target===target&&motion[i].property===property)motion.splice(i,1);
   motion.push({target,property,to,speed});
@@ -167,6 +204,9 @@ function isEquipment(n){
   return /Maquina|Manga verde|Cesto mangas|Bandeja temperos|Bisnaga|Copo expositor|Expositor de copos|Caixa termica|Tampa caixa termica|Bateria estacionaria|Quadro eletrico|Bomba eletrica|Agua limpa|Agua servida|Tanque |Bocal do tanque|Tubulacao|Cofre e reserva|Torneira|Pia cuba|Pia tanque|Gaveta caixa|Gaveta fenda/.test(n);
 }
 function isStructure(n){return /^(M2 |M3 )/.test(n) || n.includes('LED') || n.includes('Pneu') || n.includes('Calota') || n.includes('cubo') || n.includes('Sapatas');}
+function isWorktop(n){
+ return /M1 Bancada inox|Pia cuba|Pia tanque|Torneira|Maquina tirinhas|Bandeja temperos|Bisnaga|Expositor de copos|Copo expositor|Cesto mangas|Manga verde natural|P01 Forro|P03 Tampa testeira|^P06 |^P08 |^M2 |^LED /.test(n);
+}
 function applyMode(){
   const mode=state.mode;
   if(!root)return;
@@ -174,13 +214,14 @@ function applyMode(){
     const s=n.name;
     let visible=true;
     if(mode==='structure')visible=isStructure(s);
-    else if(mode==='interior')visible=!isPanel(s)&&!s.includes('Policarbonato');
+    else if(mode==='interior')visible=!isPanel(s)&&!s.includes('Policarbonato')&&(state.showWorkbench||!isWorktop(s));
     else visible=(state.panels||!isPanel(s))&&(state.poly||!s.includes('Policarbonato'));
     if(!state.equipment&&isEquipment(s))visible=false;
     if(!state.led&&s.includes('LED'))visible=false;
     n.visible=visible;
   });
   technical.visible=mode==='technical'||state.labels;
+  if(bayMarker)bayMarker.visible=mode==='interior'&&!!baySpecs[state.bay]?.frame;
   const isNight=state.night||mode==='night';
   scene.background=new THREE.Color(isNight?0x071c21:0xe9f3e6);
   scene.fog.color.set(isNight?0x071c21:0xe9f3e6);
@@ -191,9 +232,13 @@ function applyMode(){
   ledLights.forEach(l=>l.intensity=state.led?(isNight?3.7:.35):0);
   nodes.filter(n=>n.name.includes('LED')).forEach(n=>{if(n.material?.emissive)n.material.emissiveIntensity=state.led?(isNight?5.5:1.9):0});
   renderer.toneMappingExposure=isNight?1.35:1.18;
-  byId('modeDesc').textContent=({complete:'Identidade visual e todos os componentes.',structure:'Chassi, metalon, rodas, engate e sapatas.',interior:'Acesso aos armários, hidráulica e bateria.',technical:'Dimensões gerais destacadas em metros.',night:'Iluminação LED e ambiente noturno.'})[mode];
+  byId('modeDesc').textContent=({complete:'Identidade visual e todos os componentes.',structure:'Chassi, metalon, rodas, engate e sapatas.',interior:'Raio-X: removidos os painéis, a bancada e a cobertura para expor os armários inferiores.',technical:'Dimensões gerais destacadas em metros.',night:'Iluminação LED e ambiente noturno.'})[mode];
   document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===mode));
-  byId('togglePanels').checked=state.panels;
+  byId('togglePanels').checked=mode==='interior'?false:state.panels;
+  byId('toggleWorkbench').checked=state.showWorkbench;
+  byId('toggleWorkbench').disabled=mode!=='interior';
+  byId('bayControls').classList.toggle('active',mode==='interior');
+  byId('quickInterior').textContent=mode==='interior'?'✅ Interior visível':'🗄️ Ver por dentro';
   byId('toggleEquipment').checked=state.equipment;
   byId('togglePoly').checked=state.poly;
   byId('toggleLed').checked=state.led;
@@ -203,9 +248,13 @@ function activateMode(mode){
   state.mode=mode;
   if(mode==='night'){state.night=true;state.led=true}
   else state.night=false;
+  if(mode==='interior'){
+    state.panels=false;state.poly=false;state.showWorkbench=false;state.equipment=true;
+    showBay(state.bay);openAllDoors(true);slideDrawer(true);return;
+  }
+  state.panels=true;state.poly=true;
   applyMode();
-  if(mode==='interior'){setCamera('interior');openAllDoors(true);slideDrawer(true)}
-  else if(mode==='technical')setCamera('iso');
+  if(mode==='technical')setCamera('iso');
   else if(mode==='structure')setCamera('side');
   else if(mode==='complete')setCamera('iso');
   else setCamera('iso');
@@ -215,10 +264,10 @@ function setCamera(view){
   const xyz=camPositions[view]||camPositions.iso;
   camera.position.set(...xyz);
   if(view==='top')camera.up.set(0,0,-1);else camera.up.set(0,1,0);
-  orbit.target.copy(targetPoint);orbit.update();
+  orbit.target.copy(view==='interior'?new THREE.Vector3(0,.80,0):targetPoint);orbit.update();
   byId('viewSelect').value=view;
 }
-function resetCamera(){setCamera('iso');openAllDoors(false);slideDrawer(false);}
+function resetCamera(){state.bay='overview';if(bayMarker)bayMarker.visible=false;setCamera('iso');openAllDoors(false);slideDrawer(false);}
 function makeDimensions(){
  const yellow=new THREE.LineBasicMaterial({color:0xe4a32b,depthTest:false,transparent:true,opacity:.95});
  const mark=(a,b)=>{
@@ -251,7 +300,10 @@ function makeDimensions(){
 }
 function setupEvents(){
  document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>activateMode(b.dataset.mode)));
- byId('viewSelect').addEventListener('change',e=>setCamera(e.target.value));
+ byId('viewSelect').addEventListener('change',e=>{if(e.target.value==='interior')showBay('overview');else setCamera(e.target.value)});
+ byId('quickInterior').addEventListener('click',()=>showBay('overview'));
+ byId('baySelect').addEventListener('change',e=>showBay(e.target.value));
+ byId('toggleWorkbench').addEventListener('change',e=>{state.showWorkbench=e.target.checked;applyMode()});
  byId('resetCamera').addEventListener('click',resetCamera);
  byId('openDoors').addEventListener('click',()=>openAllDoors(!state.open));
  byId('openDrawer').addEventListener('click',()=>slideDrawer(!state.drawer));
@@ -306,3 +358,4 @@ function animate(){
  orbit.update();renderer.render(scene,camera);
 }
 init();
+
